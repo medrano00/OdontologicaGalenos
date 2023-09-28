@@ -8,28 +8,43 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Inicio de sesión - Odontológica Galenos</title>
-  <link rel="stylesheet" href="{% static 'css/login.css' %}">
-  <link rel="Icon" href="{% static 'images/16x16.png' %}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css" />
+  <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" type="text/css">
+  <link rel="stylesheet" href="{% static 'css/login.css' %}" type="text/css">
+  <link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css">
+  <link rel="Icon" href="{% static 'images/16x16.png' %}" type="text/css">
 </head>
 
 <body>
-  <div class="Formulario">
-    <h1>Inicio de Sesión</h1>
-    <form method="post">
-      {% csrf_token %}
-      <div class="username">
-        <label for="{{ form.username.id_for_label }}">Username:</label>
-        <input type="text" class="form-control" id="{{ form.username.id_for_label }}"
-          name="{{ form.username.html_name }}" placeholder="Enter username" required>
-      </div>
-      <div class="username">
-        <label for="{{ form.password.id_for_label }}">Password:</label>
-        <input type="password" class="form-control" id="{{ form.password.id_for_label }}"
-          name="{{ form.password.html_name }}" placeholder="Enter password" required>
-      </div>
-      <button type="submit" class="btn btn-primary">Login</button>
+  <div class="imgcontainer">
+    <img src="{% static 'images/logoo.jpg' %}" alt="" class="">
   </div>
+  <form method="POST">
+    {% csrf_token %}
+    <div class="container">
+      <label for="{{ form.username.id_for_label }}"><b>Nombre de Usuario:</b></label>
+      <input type="text" class="form-control" placeholder="Ingresar Nombre de Usuario"
+        name="{{ form.username.html_name }}" id="{{ form.username.id_for_label }}" required>
+
+      <label for="{{ form.password.id_for_label }}"><b>Contraseña</b></label>
+      <input type="password" class="form-control" placeholder="Ingrese su Contraseña"
+        name="{{ form.password.html_name }}" id="{{ form.password.id_for_label }}" required>
+
+      <button type="submit" class="btn btn-primary">Login</button>
+      <label>
+        <input type="checkbox" checked="checked" name="remember"> Recuérdame
+      </label>
+    </div>
   </form>
+  {% if messages %}
+  <div class="alert-messages">
+    {% for message in messages %}
+    <div {% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}</div>
+    {% endfor %}
+  </div>
+  {% endif %}
   {% endblock %}
 </body>
 

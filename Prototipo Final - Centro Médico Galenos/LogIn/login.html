@@ -17,7 +17,7 @@
 
 <body>
     <div class="imgcontainer">
-      <img src="../images/logoo.jpg" alt="" class="">
+      <img src="{% static 'images/logoo.jpg' %}" alt="" class="">
     </div>
     <form method="POST">
       <div class="container">
@@ -25,17 +25,17 @@
         <input type="text" class="form-control" placeholder="Ingresar Nombre de Usuario" 
         name="{{ form.username.html_name }}" id="{{ form.username.id_for_label }}" required>
 
-        <label for="psw"><b>Contraseña</b></label>
-        <input type="password" placeholder="Ingrese su Contraseña" name="psw" required>
+        <label for="{{ form.password.id_for_label }}"><b>Contraseña</b></label>
+        <input type="password" class="form-control" placeholder="Ingrese su Contraseña" 
+        name="{{ form.password.html_name }}" id="{{ form.password.id_for_label }}" required>
 
-        <a href="../indexwithlogin.html" class="btn btn-blue">Iniciar sesión</a>
+        <button type="submit" class="btn btn-primary">Login</button>
         <label>
           <input type="checkbox" checked="checked" name="remember"> Recuérdame
         </label>
       </div>
     </form>
-    <div class="container" style="background-color:#f1f1f1">
-      <span class="psw"> <a href="#">Forgot password?</a></span>
-    </div>
   </form>
+  {% endblock %}
 </body>
+</html>
