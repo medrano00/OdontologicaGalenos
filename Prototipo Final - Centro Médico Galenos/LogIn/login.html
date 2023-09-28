@@ -1,0 +1,41 @@
+{% load static %}
+{% block content %}
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - Centro Medico Galenos</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css" />
+  <link rel="stylesheet" href="../css/bootstrap.min.css" type="text/css">
+  <link rel="stylesheet" href="../css/style.css" type="text/css">
+  <link rel="stylesheet" href="../css/login.css" type="text/css">
+</head>
+
+<body>
+    <div class="imgcontainer">
+      <img src="../images/logoo.jpg" alt="" class="">
+    </div>
+    <form method="POST">
+      <div class="container">
+        <label for="{{ form.username.id_for_label }}"><b>Nombre de Usuario:</b></label>
+        <input type="text" class="form-control" placeholder="Ingresar Nombre de Usuario" 
+        name="{{ form.username.html_name }}" id="{{ form.username.id_for_label }}" required>
+
+        <label for="psw"><b>Contraseña</b></label>
+        <input type="password" placeholder="Ingrese su Contraseña" name="psw" required>
+
+        <a href="../indexwithlogin.html" class="btn btn-blue">Iniciar sesión</a>
+        <label>
+          <input type="checkbox" checked="checked" name="remember"> Recuérdame
+        </label>
+      </div>
+    </form>
+    <div class="container" style="background-color:#f1f1f1">
+      <span class="psw"> <a href="#">Forgot password?</a></span>
+    </div>
+  </form>
+</body>
