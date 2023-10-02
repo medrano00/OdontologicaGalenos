@@ -1,14 +1,17 @@
 {% load static %}
 <!DOCTYPE html>
 <html>
+
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Reservar Cita - Odontológica Galenos</title>
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css" />
-	<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" type="text/css">
-	<link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservar Cita - Odontológica Galenos</title>
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css" />
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css">
     <link rel="Icon" href="{% static 'images/16x16.png' %}">
 </head>
 
@@ -42,62 +45,13 @@
     </div>
 </header>
 
-<body>
-    <section class="booking-section bg-overlay" id="booking-section">
-        <div class="container">
-            <div class="row">
-
-                <div class="col-md-6">
-                    <div class="form-col">
-                        <h4>Haz una reserva.</h4>
-                        <h3>Cotiza con nosotros tu atención con nuestros médicos o una cirujía.</h3>
-                    </div>
-                    <head>
-                        <meta charset="UTF-8">
-                    </head>
-                    <body>
-                        <form>
-                            <input type="text" id="rut" name="rut" required oninput="checkRut(this)"
-                                placeholder="Ingrese RUT del paciente">
-                            <script src="{% static 'js/validarRUT.js' %}"></script>
-                        </form>
-                    </body>
-                    <select class="form-select">
-                        <option>Seleccione su previsión</option>
-                        <option>Banmédica</option>
-                        <option>Colmena Golden Cross</option>
-                        <option>Consalud</option>
-                        <option>Cruz Blanca</option>
-                        <option>Fonasa</option>
-                        <option>MasVida</option>
-                        <option>Particular</option>
-                        <option>Vida Tres</option>
-                    </select>
-
-                    <select class="form-select">
-                        <option>Seleccione sucursal</option>
-                        <option>Santiago</option>
-                        <option>Viña del Mar</option>
-                        <option>Puerto Montt</option>
-                    </select>
-
-                    <select class="form-select">
-                        <option>Busque por especialidad</option>
-                        <option>Neurología</option>
-                        <option>Oftalmología</option>
-                        <option>Pulmonario</option>
-                        <option>Cardiología</option>
-                        <option>Odontólogia</option>
-                        <option>Hepatología</option>
-
-                    </select>
-                    <input type="date" name="reservaCita" step="1" min="2022-11-01" max="2099-12-31">
-                    <br>
-                    <a href="#" class="btn btn-white">Reservar cita</a>
-                </div>
-            </div>
-        </div>
-    </section>
+<body><br><br><br><br><br><br>
+    <h1>¡Agenda una cita con nosotros!</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Reservar Cita</button>
+    </form>
     <footer>
         <div class="container">
             <div class="row">
@@ -127,7 +81,8 @@
                                 <i class="fa fa-envelope-o" aria-hidden="true"></i>
                                 <div>
                                     <h4>Email</h4>
-                                    <p> <a href="mailto:contacto@centromedicogalenos.cl">contacto@centromedicogalenos.cl</a>
+                                    <p> <a
+                                            href="mailto:contacto@centromedicogalenos.cl">contacto@centromedicogalenos.cl</a>
                                     </p>
                                 </div>
                             </li>
@@ -160,4 +115,5 @@
         </div>
     </footer>
 </body>
+
 </html>
