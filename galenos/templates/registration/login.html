@@ -15,37 +15,16 @@
   <link rel="stylesheet" href="{% static 'css/login.css' %}" type="text/css">
   <link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css">
   <link rel="Icon" href="{% static 'images/16x16.png' %}" type="text/css">
+  <script src="{% static 'js/login.js' %}"></script>
 </head>
 
 <body>
-  <div class="imgcontainer">
-    <img src="{% static 'images/logoo.jpg' %}" alt="" class="">
-  </div>
-  <form method="POST">
-    {% csrf_token %}
-    <div class="container">
-      <label for="{{ form.username.id_for_label }}"><b>Nombre de Usuario:</b></label>
-      <input type="text" class="form-control" placeholder="Ingresar Nombre de Usuario"
-        name="{{ form.username.html_name }}" id="{{ form.username.id_for_label }}" required>
-
-      <label for="{{ form.password.id_for_label }}"><b>Contraseña</b></label>
-      <input type="password" class="form-control" placeholder="Ingrese su Contraseña"
-        name="{{ form.password.html_name }}" id="{{ form.password.id_for_label }}" required>
-
-      <button type="submit" class="btn btn-primary">Login</button>
-      <label>
-        <input type="checkbox" checked="checked" name="remember"> Recuérdame
-      </label>
-    </div>
-  </form>
-  {% if messages %}
-  <div class="alert-messages">
-    {% for message in messages %}
-    <div {% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}</div>
-    {% endfor %}
-  </div>
-  {% endif %}
-  {% endblock %}
+  <img src="{% static 'images/logoo.jpg' %}" alt="" class="">
+    <form id="loginForm" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Login</button>
+    </form>
 </body>
-
+{% endblock %}
 </html>

@@ -4,6 +4,7 @@ from django.middleware import csrf
 from django.contrib import messages
 from django.contrib.auth import authenticate, login
 from galenoslogin.views import indexwithlogin
+from django.http import JsonResponse
 # Create your views here
 
 def index(request):
@@ -14,12 +15,11 @@ def reservarCita(request):
 
 def login_view(request):
     if request.method == 'POST':
-        username = request.POST.get('username')
-        password = request.POST.get('password')
+        username = request.POST['username']
+        password = request.POST['password']
         user = authenticate(request, username=username, password=password)
         if user != None:
             login(request, user)
-            return redirect(indexwithlogin)
+            return JsonResponse({'status': 'success'})
         else:
-            messages.error(request, 'Usuario o contraseña inválido')
-    return render(request, 'login.html')
+            return JsonResponse({'status': 'error', 'message': 'Invalid username or password'})
