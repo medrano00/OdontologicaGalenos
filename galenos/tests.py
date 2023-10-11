@@ -101,3 +101,5 @@ class TestGalenos(LiveServerTestCase):
         time.sleep(1)
         self.selenium.find_element(By.CSS_SELECTOR, "button").click()
         time.sleep(1)
+
+        print("Pruebas Terminadas")
