@@ -23,8 +23,13 @@
     <form id="loginForm" method="post">
         {% csrf_token %}
         {{ form.as_p }}
-        <button type="submit">Login</button>
+        <button type="submit" onclick="showAlert()">Login</button>
     </form>
 </body>
+<script>
+  function showAlert() {
+    alert("Usuario ha iniciado sesión satisfactoriamente");
+  }
+</script>
 {% endblock %}
 </html>

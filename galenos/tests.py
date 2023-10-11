@@ -37,6 +37,12 @@ class TestGalenos(LiveServerTestCase):
         self.selenium.find_element(By.ID, "id_password").send_keys("fabo1234")
         time.sleep(1)
         self.selenium.find_element(By.CSS_SELECTOR, "button").click()
+        time.sleep(1)
+        alert = self.selenium.switch_to.alert
+        assert alert.text == "Usuario ha iniciado sesión satisfactoriamente"
+        alert.accept()
+        time.sleep(1)
+        self.selenium.get("http://localhost:8000/galenoslogin/indexwithlogin")
         time.sleep(3)
 
     def test_g03(self):
@@ -86,7 +92,7 @@ class TestGalenos(LiveServerTestCase):
         self.selenium.find_element(By.ID, "id_password").click()
         time.sleep(1)
         self.selenium.find_element(By.CSS_SELECTOR, "button").click()
-        time.sleep(1)
+        time.sleep(3)
 
     def test_g06(self):
         print("TestG06")
@@ -100,6 +106,6 @@ class TestGalenos(LiveServerTestCase):
         self.selenium.find_element(By.ID, "id_password").send_keys("FabO1234")
         time.sleep(1)
         self.selenium.find_element(By.CSS_SELECTOR, "button").click()
-        time.sleep(1)
+        time.sleep(3)
 
         print("Pruebas Terminadas")
