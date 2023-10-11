@@ -1,7 +1,7 @@
 from django.urls import path
 from . import views
-from django.contrib.auth.views import LoginView
-from django.contrib.auth.views import LogoutView
+from django.contrib.auth.views import LoginView, LogoutView
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 urlpatterns = [
     path('indexwithlogin', views.indexwithlogin, name='indexwithlogin'),
@@ -10,3 +10,6 @@ urlpatterns = [
     path('reservarCita/', views.reservarCita, name='reservarCitaLogin'),
     path('reservaRealizada/', views.reservaRealizada, name='reservaRealizada'),
 ]
+
+# Include static file handlers for testing
+urlpatterns += staticfiles_urlpatterns()
