@@ -23,8 +23,21 @@
     <form id="loginForm" method="post">
         {% csrf_token %}
         {{ form.as_p }}
-        <button type="submit">Login</button>
+        <button type="submit" onclick="validateForm()">Login</button>
     </form>
 </body>
+<script>
+  function validateForm() {
+    var username = document.getElementById("id_username").value;
+    var password = document.getElementById("id_password").value;
+    if (username == "" || password == "") {
+      alert("Campos vacíos, por favor ingresar información");
+    } else if (username != "fespinoza" || password != "fabo1234") {
+      alert("Campos erróneos, por favor corrija la información");
+    } else {
+      alert("Usuario ha iniciado sesión satisfactoriamente");
+    }
+  }
+  </script>
 {% endblock %}
 </html>
