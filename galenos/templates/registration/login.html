@@ -93,7 +93,9 @@
 </head>
 
 <body>
-  <img src="{% static 'images/logoo.jpg' %}" alt="" class="logo">
+  <a href="{% url 'index' %}">
+    <img src="{% static 'images/logoo.jpg' %}" alt="" class="logo">
+  </a>
   <div class="container">
     <form id="loginForm" method="post" class="login-form">
       {% csrf_token %}
