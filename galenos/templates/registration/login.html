@@ -21,17 +21,24 @@
   <a href="{% url 'index' %}">
     <img src="{% static 'images/logoo.jpg' %}" alt="" class="logo">
   </a>
-  <div class="container">
-      <form id="loginForm" method="post" class="login-form">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit" class="btn btn-primary" onclick="validateForm()">Iniciar sesión</button>
-      </form>
-    <div class="forgot-password">
-      <a href="#">¿Olvidó su contraseña?</a>
+    <div class="container">
+        <form id="loginForm" method="post" class="login-form">
+          {% csrf_token %}
+          <div class="form-group">
+            <label for="{{ form.username.id_for_label }}">Usuario: </label>
+            {{ form.username }}
+          </div>
+          <div class="form-group">
+            <label for="{{ form.password.id_for_label }}">Contraseña: </label>
+            {{ form.password }}
+          </div>
+          <button type="submit" class="btn btn-primary" onclick="validateForm()">Iniciar sesión</button>
+        </form>
+      <div class="forgot-password">
+        <button type="button" class="btn btn-secondary"><a href="#">¿Olvidó su contraseña?</a></button>
+      </div>
     </div>
-  </div>
-</body>
+  </body>
 
-</html>
-{% endblock %}
+  </html>  {% endblock %}
+
