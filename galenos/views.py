@@ -5,6 +5,8 @@ from django.contrib import messages
 from django.contrib.auth import authenticate, login
 from galenoslogin.views import indexwithlogin
 from django.http import JsonResponse
+from .forms import LoginForm
+
 # Create your views here
 
 def index(request):
@@ -12,10 +14,6 @@ def index(request):
 
 def reservarCita(request):
     return render(request, 'galenos/reservarCita.html', {})
-
-from django.contrib.auth import authenticate, login
-from django.http import JsonResponse
-from .forms import LoginForm
 
 def login_view(request):
     if request.method == 'POST':
@@ -26,12 +24,10 @@ def login_view(request):
             user = authenticate(request, username=username, password=password)
             if user is not None:
                 login(request, user)
-                return JsonResponse({'status': 'success'})
-            else:                return JsonResponse({'status': 'error', 'message': 'Invalid username or password'})
-
-        else:
-            return JsonResponse({'status': 'error', 'message': 'Invalid form data'})
+                return redirect('indexwithlogin')  # Redirect to the 'indexwithlogin' page
+            else:
+                return JsonResponse({'status': 'invalid'})
     else:
         form = LoginForm()
-        return render(request, 'galenos/login.html', {'form': form})
+    return render(request, 'galenos/login.html', {'form': form})
 
