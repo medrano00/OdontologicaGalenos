@@ -9,6 +9,7 @@ urlpatterns = [
     path('', LogoutView.as_view(), name='logout'),
     path('reservarCita/', views.reservarCita, name='reservarCitaLogin'),
     path('reservaRealizada/', views.reservaRealizada, name='reservaRealizada'),
+    path('admin/', views.admin, name='admin'),
 ]
 
 # Include static file handlers for testing

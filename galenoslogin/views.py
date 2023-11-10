@@ -26,3 +26,7 @@ def reservarCita(request):
 
 def reservaRealizada(request):
     return render(request, 'galenoslogin/reservaRealizada.html', {})
+
+def admin(request):
+    reservas = Reserva.objects.all()
+    return render(request, 'galenoslogin/admin.html', {'reservas': reservas})
