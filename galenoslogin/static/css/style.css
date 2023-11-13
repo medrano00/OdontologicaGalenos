@@ -464,10 +464,46 @@ section.services-section {
 section.about-section {
     padding: 30px 0px 40px;
 }	
-	
-	
-	
+}
+/* Style the table */
+table {
+    border-collapse: collapse;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 14px;
+    font-family: Arial, sans-serif;
+    color: #333;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
 }
 
+/* Style the table header */
+thead {
+    background-color: #f2f2f2;
+    text-align: left;
+}
 
+th {
+    padding: 12px;
+    font-weight: bold;
+}
 
+/* Style the table body */
+tbody {
+    background-color: #fff;
+}
+
+td {
+    padding: 12px;
+    text-align: left;
+    vertical-align: middle;
+    border-bottom: 1px solid #f2f2f2;
+}
+
+/* Style the table rows */
+tr:hover {
+    background-color: #f5f5f5;
+}

@@ -7,5 +7,6 @@ $("a[href^='#']").click(function(e) {
 
 	$("body, html").animate({
 		scrollTop: position
-	}  
+	}); // added missing closing parenthesis here
+
 });
