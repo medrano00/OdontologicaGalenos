@@ -197,4 +197,4 @@ class TestGalenos(LiveServerTestCase):
         self.selenium.get("http://localhost:8000/index/")
         self.selenium.maximize_window()
         time.sleep(2)
-        
+        self.selenium.find_element(By.XPATH, "/html/body/header/div/nav/div/div/ul//a").click()
