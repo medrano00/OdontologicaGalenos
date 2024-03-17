@@ -76,8 +76,9 @@
             <td>{{reserva.sucursal}}</td>
             <td>{{reserva.prevision}}</td>
             <td>{{reserva.especialidad}}</td>
-            <td>{{reserva.fecha}}
-            </td>
+            <td>{{reserva.fecha}}</td>
+			<td><a href="{% url 'reserva_del' pk=reserva.id %}">Eliminar</a></td>
+			<td><a href="#">Editar</a></td>
         </tr>
         {% endfor %}
     </table>

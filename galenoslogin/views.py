@@ -24,6 +24,22 @@ def reservarCita(request):
         form = ReservarCitaForm()
     return render(request, 'galenoslogin/reservarCita.html', {'form': form})
 
+def reserva_del(request, pk):
+    context = {}
+    try:
+        reserva = Reserva.objects.get(id=pk)  # Assuming 'id' is the primary key field of the Reserva model
+
+        reserva.delete()
+        mensaje = "Bien, datos eliminados..."
+        reservas = Reserva.objects.all()  # Retrieve the remaining reservations
+        context = {'reservas': reservas, 'mensaje': mensaje}  # Update the context with the remaining reservations
+        return render(request, 'galenoslogin/admin.html', context)
+    except Reserva.DoesNotExist:
+        mensaje = "Error, reserva no existe..."
+        reservas = Reserva.objects.all()  # Retrieve all reservations
+        context = {'reservas': reservas, 'mensaje': mensaje}  # Update the context with all reservations
+        return render(request, 'galenoslogin/admin.html', context)
+
 def reservaRealizada(request):
     return render(request, 'galenoslogin/reservaRealizada.html', {})
 

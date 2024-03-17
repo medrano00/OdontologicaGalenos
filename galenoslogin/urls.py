@@ -10,6 +10,7 @@ urlpatterns = [
     path('reservarCita/', views.reservarCita, name='reservarCitaLogin'),
     path('reservaRealizada/', views.reservaRealizada, name='reservaRealizada'),
     path('admin/', views.admin, name='admin'),
+    path('reserva_del/<str:pk>', views.reserva_del, name='reserva_del'),
 ]
 
 # Include static file handlers for testing
