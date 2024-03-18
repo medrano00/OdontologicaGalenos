@@ -46,3 +46,25 @@ def reservaRealizada(request):
 def admin(request):
     reservas = Reserva.objects.all()
     return render(request, 'galenoslogin/admin.html', {'reservas': reservas})
+
+def editar_reserva(request, pk):
+    reserva = get_object_or_404(Reserva, pk=pk)
+    if request.method == "POST":
+        form = ReservarCitaForm(request.POST)
+        if form.is_valid():
+            reserva.rut = form.cleaned_data['rut']
+            reserva.sucursal = form.cleaned_data['sucursal']
+            reserva.prevision = form.cleaned_data['prevision']
+            reserva.especialidad = form.cleaned_data['especialidad']
+            reserva.fecha = form.cleaned_data['fecha']
+            reserva.save()
+            return redirect('reservaRealizada')
+    else:
+        form = ReservarCitaForm(initial={
+            'rut': reserva.rut,
+            'sucursal': reserva.sucursal,
+            'prevision': reserva.prevision,
+            'especialidad': reserva.especialidad,
+            'fecha': reserva.fecha
+        })
+    return render(request, 'galenoslogin/editar_reserva.html', {'form': form})

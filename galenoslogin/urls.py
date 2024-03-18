@@ -11,6 +11,7 @@ urlpatterns = [
     path('reservaRealizada/', views.reservaRealizada, name='reservaRealizada'),
     path('admin/', views.admin, name='admin'),
     path('reserva_del/<str:pk>', views.reserva_del, name='reserva_del'),
+    path('reserva_edit/<str:pk>/', views.editar_reserva, name='reserva_edit'),
 ]
 
 # Include static file handlers for testing
