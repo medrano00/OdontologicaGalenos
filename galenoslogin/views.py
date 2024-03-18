@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from .forms import ReservarCitaForm
 from .models import Reserva
 
@@ -58,7 +58,7 @@ def editar_reserva(request, pk):
             reserva.especialidad = form.cleaned_data['especialidad']
             reserva.fecha = form.cleaned_data['fecha']
             reserva.save()
-            return redirect('reservaRealizada')
+            return redirect('admin')
     else:
         form = ReservarCitaForm(initial={
             'rut': reserva.rut,
