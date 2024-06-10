@@ -28,6 +28,17 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+# Email
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'  # Cambia esto al host de tu proveedor de correo
+EMAIL_PORT = 465  # El puerto que utilices para el SMTP
+EMAIL_HOST_USER = 'galenoscentromedico1@gmail.com'  # Tu dirección de correo electrónico
+EMAIL_HOST_PASSWORD = 'mlpbdikeiyudnkdx'  # La contraseña de tu correo electrónico
+EMAIL_USE_SSL = True
+DEFAULT_FROM_EMAIL = EMAIL_HOST_USER  # El email por defecto desde donde se enviarán los correos
+
+
 
 # Application definition
 

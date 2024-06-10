@@ -8,3 +8,4 @@ class Reserva(models.Model):
     prevision = models.CharField(max_length=100)
     especialidad = models.CharField(max_length=100)
     fecha = models.DateField()
+    email = models.EmailField()
