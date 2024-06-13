@@ -13,6 +13,25 @@
 	<link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css">
 	<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" type="text/css">
 	<link rel="Icon" href="{% static 'images/16x16.png' %}">
+
+	<style>
+		@keyframes appear {
+			from {
+				opacity: 0;
+				clip-path: inset(100% 100% 0 0);
+			}
+			to{
+				opacity: 1;
+				clip-path: inset(0 0 0 0);
+			}
+		}
+	
+		.container{
+			animation: appear linear;
+			animation-timeline: view();
+			animation-range: entry 0% cover 40%;
+		}
+		</style>
 </head>
 
 <body>
