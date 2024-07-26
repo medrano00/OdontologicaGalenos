@@ -1,0 +1,3 @@
+1.- Arreglar "sections" para ir a "Acerca" o "Servicios", por ejemplo
+2.- Añadir método de registro de usuarios
+3.- Agregar estilos a formularios (Opcional)
