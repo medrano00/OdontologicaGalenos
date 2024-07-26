@@ -1,22 +1,23 @@
+"""
+URL configuration for galenos project.
+
+The `urlpatterns` list routes URLs to views. For more information please see:
+    https://docs.djangoproject.com/en/5.0/topics/http/urls/
+Examples:
+Function views
+    1. Add an import:  from my_app import views
+    2. Add a URL to urlpatterns:  path('', views.home, name='home')
+Class-based views
+    1. Add an import:  from other_app.views import Home
+    2. Add a URL to urlpatterns:  path('', Home.as_view(), name='home')
+Including another URLconf
+    1. Import the include() function: from django.urls import include, path
+    2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
+"""
 from django.contrib import admin
-from django.urls import path
-from . import views
-from django.contrib.auth.views import LoginView, LogoutView
-from django.contrib.staticfiles.urls import staticfiles_urlpatterns
-from django.contrib.auth import views as auth_views
+from django.urls import path, include
 
 urlpatterns = [
-    path('index/', views.index, name='index'),
-    path('registration/', LoginView.as_view(), name='login'),
-    path('', LogoutView.as_view(), name='logout'),
-    path('reservarCita/', views.reservarCita, name='reservarCita'),
-    path('registration/', LoginView.as_view(), name='login'),
-    path('password_reset/', auth_views.PasswordResetView.as_view(), name='password_reset'),
-    path('password_reset/done/', auth_views.PasswordResetDoneView.as_view(), name='password_reset_done'),
-    path('reset/<uidb64>/<token>/', auth_views.PasswordResetConfirmView.as_view(), name='password_reset_confirm'),
-    path('reset/done/', auth_views.PasswordResetCompleteView.as_view(), name='password_reset_complete'),
-
+    path('portalAdministrador/', admin.site.urls),
+    path('', include('core.urls')),
 ]
-
-# Include static file handlers for testing
-urlpatterns += staticfiles_urlpatterns()
