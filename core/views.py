@@ -6,7 +6,7 @@ from django.http import JsonResponse
 from django.core.mail import send_mail
 from django.conf import settings
 
-# - - - - - - - - - - - - - -  URLs vitales de la página - - - - - - - - - - - - - - #
+# - - - - - - - - - - - - - -  Vistas vitales de la página - - - - - - - - - - - - - - #
 
 def home(request):
     return render(request, 'core/index.html')
