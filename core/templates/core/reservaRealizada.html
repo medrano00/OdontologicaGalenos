@@ -1,0 +1,126 @@
+{% load static %}
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reserva Realizada - Centro Medico Galenos</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css" />
+  <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" type="text/css">
+  <link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css">
+  <link rel="Icon" href="{% static 'images/16x16.png' %}">
+</head>
+
+<header>
+  <div class="container">
+    <nav class="navbar navbar-expand-lg navbar-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="{% url 'home' %}">
+          <img src="{% static 'images/logoo.jpg' %}" alt="">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" href="#about-section">Acerca de</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link " href="#services-section">Servicios</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="#reviews-section">Comentarios</a>
+            </li>
+
+
+          </ul>
+        </div>
+      </div>
+    </nav>
+</header>
+
+<body>
+  <br>
+  <br>
+  <br>
+  <br><br>
+  <br>
+  <br>
+  <br>
+  <h2>
+    ¡Gracias por reservar con nosotros!</h2>
+  <h5>Recuerda estar media hora antes de la hora reservada</h5>
+  <h5>Así, nos cuidamos entre todos.</h5>
+  <br>
+  <br>
+  <br>
+  <br>
+  <a href="{% url 'home' %}" class="btn btn-white">Volver al menú principal</a>
+  <footer>
+    <div class="container">
+      <div class="row">
+
+        <div class="col-md-4">
+          <div class="footer-widget">
+            <h3>Contáctenos</h3>
+
+            <ul class="footer-address">
+              <li>
+                <i class="fa fa-map-marker" aria-hidden="true"></i>
+                <div>
+                  <h4>Dirección</h4>
+                  <p> <a
+                      href="https://www.google.com/maps/place/Av.+Los+Pajaritos+3100,+Maip%C3%BA,+Regi%C3%B3n+Metropolitana/@-33.4992969,-70.7581264,19z/data=!4m5!3m4!1s0x9662c32ec6f12f75:0x707cf7c3e607ffe!8m2!3d-33.4991097!4d-70.7577875">
+                      Av. Los Pajaritos 3100, Maipú.</a></p>
+                </div>
+              </li>
+              <li>
+                <i class="fa fa-phone" aria-hidden="true"></i>
+                <div>
+                  <h4>Teléfono</h4>
+                  <p> <a href="tel:+56229518870">+ 56 2 2951 8870 </a></p>
+                </div>
+              </li>
+              <li>
+                <i class="fa fa-envelope-o" aria-hidden="true"></i>
+                <div>
+                  <h4>Email</h4>
+                  <p> <a href="mailto:contacto@centromedicogalenos.cl">contacto@centromedicogalenos.cl</a></p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="col-md-2">
+          <div class="footer-widget">
+            <h3>Servicios</h3>
+            <ul class="footer-menu">
+              <li> <a href="#"> Neurología </a> </li>
+              <li> <a href="#"> Oftalmología </a> </li>
+              <li> <a href="#"> Pulmonario </a> </li>
+              <li> <a href="#"> Cardiología </a> </li>
+              <li> <a href="#"> Odontólogos </a> </li>
+              <li> <a href="#"> Hepatología </a> </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="footer-widget">
+            <h3>Boletin informativo</h3>
+            <form>
+              <input type="email" placeholder="Ingresar Email" class="form-control mb-2">
+              <input type="submit" value="Suscríbete" class="btn btn-white">
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
